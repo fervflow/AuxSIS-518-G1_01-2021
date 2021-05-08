@@ -9,3 +9,8 @@ Asistencias/
 *.exe
 *.dll
 *.txt
+
+# Others
+*.php
+*.html
+*.js
