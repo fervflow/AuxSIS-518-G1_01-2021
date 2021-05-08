@@ -1,0 +1,11 @@
+# Directorios sin tracking
+Clases_Grabadas/
+Asistencias/
+
+# Archivos sin tracking
+*.mp4
+*.mkv
+*.m4v
+*.exe
+*.dll
+*.txt
