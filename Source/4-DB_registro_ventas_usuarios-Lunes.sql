@@ -106,7 +106,6 @@ SELECT * FROM rt_producto_venta;
 
 
 -- Actualizar el valor del precio por cantidad de la tabla 'rt_producto_venta'
-
 UPDATE rt_producto_venta SET ppcantidad =
         (SELECT producto.precio_unit FROM producto WHERE producto.id = 100 ) *
         (SELECT rpv.cantidad FROM rt_producto_venta AS rpv WHERE rpv.id_venta = 1
@@ -115,26 +114,10 @@ WHERE rt_producto_venta.id_venta = 1
     AND rt_producto_venta.id_producto = 100;
 GO
 
-
-UPDATE rt_producto_venta SET ppcantidad =
-        (SELECT producto.precio_unit FROM producto, rt_producto_venta
-            WHERE producto.id = rt_producto_venta.id_producto) *
-        (SELECT rpv.cantidad FROM rt_producto_venta AS rpv, venta
-            WHERE rpv.id_venta = venta.id)
-
-            
-            (SELECT id FROM venta)
-                AND rpv.id_producto = (SELECT id FROM producto))
-WHERE rt_producto_venta.id_venta = (SELECT id FROM venta)
-    AND rt_producto_venta.id_producto = (SELECT id FROM producto);
+-- Actualizacion de todos los valores de la tabla con sus valores correspondientes
+UPDATE rt_producto_venta 
+SET ppcantidad = cantidad * producto.precio_unit
+FROM rt_producto_venta
+INNER JOIN producto ON producto.id = rt_producto_venta.id_producto;
 GO
-
-
-
-
-
-DECLARE @tam INT;
-SELECT @tam = (SELECT COUNT(*) FROM rt_producto_venta);
-DECLARE @i INT;
-SELECT @i = 1;
-
+SELECT * FROM rt_producto_venta;
