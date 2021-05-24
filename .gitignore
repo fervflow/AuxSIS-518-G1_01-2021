@@ -1,6 +1,7 @@
 # Directorios sin tracking
 Clases_Grabadas/
 Asistencias/
+Parciales/
 
 # Archivos sin tracking
 *.mp4
@@ -9,6 +10,7 @@ Asistencias/
 *.exe
 *.dll
 *.txt
+solucion*.*
 
 # Others
 *.php
