@@ -116,7 +116,7 @@ FROM compania
 LEFT JOIN trabaja
 ON compania.nombre_compania = trabaja.nombre_compania;
 
--- JOINs
+
 SELECT * FROM compania;
 SELECT * FROM trabaja;
 
