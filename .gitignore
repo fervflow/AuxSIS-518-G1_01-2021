@@ -10,7 +10,7 @@ Parciales/
 *.exe
 *.dll
 *.txt
-solucion*.*
+*solucion*.*
 
 # Others
 *.php
