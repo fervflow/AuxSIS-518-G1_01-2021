@@ -2,6 +2,7 @@
 Clases_Grabadas/
 Asistencias/
 Parciales/
+Practicas/
 
 # Archivos sin tracking
 *.mp4
@@ -16,3 +17,4 @@ Parciales/
 *.php
 *.html
 *.js
+*.pdf
