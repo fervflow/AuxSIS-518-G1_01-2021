@@ -4,11 +4,11 @@
 -- EXEC nombre_procedimiento_almacenado @param1, @param2, @param3...;
 
 SELECT * FROM rt_producto_venta;
-
+GO
 -- Renombrar la comlumna 'ppcantidad' de la tabla 'rt_producto venta' 
 
 EXEC sp_rename 'rt_producto_venta.ppcantidad', 'precio_acum', 'COLUMN';
-
+GO
 
 SELECT * FROM cliente;
 SELECT * FROM producto;
@@ -27,7 +27,7 @@ SELECT * FROM venta, cliente WHERE venta.id_cliente = cliente.id;
 SELECT * FROM venta v
 INNER JOIN cliente c
 ON v.id_cliente = c.id;
-
+GO
 
 -- Actualizacion de todos los valores de la columna 'nombre_cliente' de la tabla 'venta' con sus valores correspondientes
 UPDATE venta SET venta.nombre_cliente = cliente.nombre
@@ -43,11 +43,13 @@ SELECT * FROM rt_producto_venta;
 SELECT p.nombre, p.precio_unit, pv.cantidad, pv.precio_acum
 FROM producto p, rt_producto_venta pv
 WHERE p.id = pv.id_producto;
+GO
 
 SELECT pv.id_venta, p.nombre, p.precio_unit, pv.cantidad, pv.precio_acum
 FROM producto p
 INNER JOIN rt_producto_venta pv
 ON p.id = pv.id_producto;
+GO
 
     -- * Concatenado de texto
 SELECT CONCAT('texto1', 'texto2', 'texto3');
